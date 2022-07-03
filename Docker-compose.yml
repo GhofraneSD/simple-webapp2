@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+ apache:
+  container_name: php-apache
+  image: ghofranesd/apache
+  ports: 
+    - 8000:80
+    
+ db:
+  container_name: mydatabase
+  image: mysql
+  restart: always
+  environment:
+    MYSQL_DATABASE: simple_lamp
+    MYSQL_DATABASE_USERNAME: username
+    MYSQL_DATABASE_PASSWORD: password
+    MYSQL_ALLOW_EMPTY_PASSWORD: 1
+  ports:
+    - 3306:3306  
+
+
+
+
